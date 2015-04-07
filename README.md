@@ -1,1 +1,3 @@
-# brew-tutor
+# Brew Tutor :beer::mortar_board:
+
+:beers:
