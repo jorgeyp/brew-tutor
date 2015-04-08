@@ -1,11 +1,11 @@
 <resources>
     <string name="app_name">Brew Tutor</string>
 
-    <string name="title_section1">Brewing</string>
-    <string name="title_section2">Ingredients</string>
-    <string name="title_section3">Equipment</string>
-    <string name="title_section4">Styles</string>
-    <string name="title_section5">Recipes</string>
+    <string name="title_section_brewing">Brewing</string>
+    <string name="title_section_ingredients">Ingredients</string>
+    <string name="title_section_equipment">Equipment</string>
+    <string name="title_section_styles">Styles</string>
+    <string name="title_section_recipes">Recipes</string>
 
     <string name="navigation_drawer_open">Open navigation drawer</string>
     <string name="navigation_drawer_close">Close navigation drawer</string>
