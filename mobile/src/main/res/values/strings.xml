@@ -19,7 +19,7 @@
     <string name="title_style_lagers">Lagers</string>
     <string name="title_style_ales">Ales</string>
     <string name="title_style_wheat">Wheat beers</string>
-    <string name="title_style_mixed">Mixed</string>
+    <string name="title_style_mixed">Mixed styles</string>
 
     <string name="hello_world">Hello world!</string>
 </resources>
