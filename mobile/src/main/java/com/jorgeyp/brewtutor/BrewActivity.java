@@ -77,13 +77,22 @@ public class BrewActivity extends Activity {
             }
         };
 
-        // Add 4 tabs, specifying the tab's text and TabListener
-        for (int i = 0; i < 4; i++) {
-            actionBar.addTab(
-                    actionBar.newTab()
-                            .setText("Tab " + (i + 1))
-                            .setTabListener(tabListener));
-        }
+        actionBar.addTab(
+                actionBar.newTab()
+                        .setText(getString(R.string.title_style_lagers))
+                        .setTabListener(tabListener));
+        actionBar.addTab(
+                actionBar.newTab()
+                        .setText(getString(R.string.title_style_ales))
+                        .setTabListener(tabListener));
+        actionBar.addTab(
+                actionBar.newTab()
+                        .setText(getString(R.string.title_style_wheat))
+                        .setTabListener(tabListener));
+        actionBar.addTab(
+                actionBar.newTab()
+                        .setText(getString(R.string.title_style_mixed))
+                        .setTabListener(tabListener));
     }
 
 
