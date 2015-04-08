@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="pale_lager">#F8F753</color>
+    <color name="ipa">#D5BC26</color>
+    <color name="amber_ale">#8D4C32</color>
+    <color name="imperial_stout">#030403</color>
+</resources>
