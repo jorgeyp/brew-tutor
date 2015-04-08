@@ -193,7 +193,7 @@ public class NavigationDrawerFragment extends Fragment {
 
     private void selectItem(int position) {
         switch (position) {
-            case 0:
+            case 1:
                 Intent intent = new Intent(getActivity(), BrewActivity.class);
                 getActivity().startActivity(intent);
         }
