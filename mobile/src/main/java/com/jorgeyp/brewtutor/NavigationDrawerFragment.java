@@ -4,6 +4,7 @@ package com.jorgeyp.brewtutor;
 import android.app.Activity;
 import android.app.ActionBar;
 import android.app.Fragment;
+import android.content.Intent;
 import android.support.v4.app.ActionBarDrawerToggle;
 import android.support.v4.view.GravityCompat;
 import android.support.v4.widget.DrawerLayout;
@@ -102,11 +103,11 @@ public class NavigationDrawerFragment extends Fragment {
                 android.R.layout.simple_list_item_activated_1,
                 android.R.id.text1,
                 new String[]{
-                        getString(R.string.title_section_brewing),
-                        getString(R.string.title_section_ingredients),
-                        getString(R.string.title_section_equipment),
-                        getString(R.string.title_section_styles),
-                        getString(R.string.title_section_recipes)
+                        getString(R.string.title_section_brew),
+                        getString(R.string.title_section_learn),
+                        getString(R.string.title_section_log),
+                        getString(R.string.title_section_settings),
+                        getString(R.string.title_section_help)
                 }));
         mDrawerListView.setItemChecked(mCurrentSelectedPosition, true);
         return mDrawerListView;
@@ -191,16 +192,22 @@ public class NavigationDrawerFragment extends Fragment {
     }
 
     private void selectItem(int position) {
-        mCurrentSelectedPosition = position;
-        if (mDrawerListView != null) {
-            mDrawerListView.setItemChecked(position, true);
+        switch (position) {
+            case 0:
+                Intent intent = new Intent(getActivity(), BrewActivity.class);
+                getActivity().startActivity(intent);
         }
-        if (mDrawerLayout != null) {
-            mDrawerLayout.closeDrawer(mFragmentContainerView);
-        }
-        if (mCallbacks != null) {
-            mCallbacks.onNavigationDrawerItemSelected(position);
-        }
+
+//        mCurrentSelectedPosition = position;
+//        if (mDrawerListView != null) {
+//            mDrawerListView.setItemChecked(position, true);
+//        }
+//        if (mDrawerLayout != null) {
+//            mDrawerLayout.closeDrawer(mFragmentContainerView);
+//        }
+//        if (mCallbacks != null) {
+//            mCallbacks.onNavigationDrawerItemSelected(position);
+//        }
     }
 
     @Override

@@ -54,19 +54,19 @@ public class MainActivity extends Activity
     public void onSectionAttached(int number) {
         switch (number) {
             case 1:
-                mTitle = getString(R.string.title_section_brewing);
+                mTitle = getString(R.string.title_section_brew);
                 break;
             case 2:
-                mTitle = getString(R.string.title_section_ingredients);
+                mTitle = getString(R.string.title_section_learn);
                 break;
             case 3:
-                mTitle = getString(R.string.title_section_equipment);
+                mTitle = getString(R.string.title_section_log);
                 break;
             case 4:
-                mTitle = getString(R.string.title_section_styles);
+                mTitle = getString(R.string.title_section_settings);
                 break;
             case 5:
-                mTitle = getString(R.string.title_section_recipes);
+                mTitle = getString(R.string.title_section_help);
                 break;
         }
     }
