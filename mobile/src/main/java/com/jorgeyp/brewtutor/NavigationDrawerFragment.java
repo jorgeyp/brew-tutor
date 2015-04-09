@@ -4,6 +4,7 @@ package com.jorgeyp.brewtutor;
 import android.app.Activity;
 import android.app.ActionBar;
 import android.app.Fragment;
+import android.app.FragmentManager;
 import android.content.Intent;
 import android.support.v4.app.ActionBarDrawerToggle;
 import android.support.v4.view.GravityCompat;
@@ -196,8 +197,21 @@ public class NavigationDrawerFragment extends Fragment {
     private void selectItem(int position) {
         switch (position) {
             case 1:
-                Intent intent = new Intent(getActivity(), BrewActivity.class);
-                getActivity().startActivity(intent);
+//                Intent intent = new Intent(getActivity(), BrewActivity.class);
+//                getActivity().startActivity(intent);
+
+                // Create a new fragment and specify the planet to show based on position
+                Fragment fragment = new BrewStylesFragment();
+                Bundle args = new Bundle();
+
+                // Insert the fragment by replacing any existing fragment
+                FragmentManager fragmentManager = getFragmentManager();
+                fragmentManager.beginTransaction()
+                        .replace(R.id.container, fragment)
+                        .commit();
+
+
+                mDrawerLayout.closeDrawers();
         }
 
 //        mCurrentSelectedPosition = position;

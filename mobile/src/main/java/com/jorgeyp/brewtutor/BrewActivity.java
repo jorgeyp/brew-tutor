@@ -15,6 +15,7 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Toolbar;
 
 
 public class BrewActivity extends Activity {
@@ -38,7 +39,11 @@ public class BrewActivity extends Activity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_brew);
-        final ActionBar actionBar = getActionBar();
+        // As we're using a Toolbar, we should retrieve it and set it
+        // to be our ActionBar
+        Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
+        setActionBar(toolbar);
+//        final ActionBar actionBar = getActionBar();
 
         // Create the adapter that will return a fragment for each of the three
         // primary sections of the activity.
@@ -46,53 +51,10 @@ public class BrewActivity extends Activity {
 
         // Set up the ViewPager with the sections adapter.
         mViewPager = (ViewPager) findViewById(R.id.pager);
-//        mViewPager.setOnPageChangeListener(
-//                new ViewPager.SimpleOnPageChangeListener() {
-//                    @Override
-//                    public void onPageSelected(int position) {
-//                        // When swiping between pages, select the
-//                        // corresponding tab.
-//                        getActionBar().setSelectedNavigationItem(position);
-//                    }
-//                });
+
         mViewPager.setAdapter(mSectionsPagerAdapter);
 
-//        // Specify that tabs should be displayed in the action bar.
-//        actionBar.setNavigationMode(ActionBar.NAVIGATION_MODE_TABS);
 
-//        // Create a tab listener that is called when the user changes tabs.
-//        ActionBar.TabListener tabListener = new ActionBar.TabListener() {
-//            public void onTabSelected(ActionBar.Tab tab, FragmentTransaction ft) {
-//                // When the tab is selected, switch to the
-//                // corresponding page in the ViewPager.
-//                mViewPager.setCurrentItem(tab.getPosition());
-//            }
-//
-//            public void onTabUnselected(ActionBar.Tab tab, FragmentTransaction ft) {
-//                // hide the given tab
-//            }
-//
-//            public void onTabReselected(ActionBar.Tab tab, FragmentTransaction ft) {
-//                // probably ignore this event
-//            }
-//        };
-
-//        actionBar.addTab(
-//                actionBar.newTab()
-//                        .setText(getString(R.string.title_style_lagers))
-//                        .setTabListener(tabListener));
-//        actionBar.addTab(
-//                actionBar.newTab()
-//                        .setText(getString(R.string.title_style_ales))
-//                        .setTabListener(tabListener));
-//        actionBar.addTab(
-//                actionBar.newTab()
-//                        .setText(getString(R.string.title_style_wheat))
-//                        .setTabListener(tabListener));
-//        actionBar.addTab(
-//                actionBar.newTab()
-//                        .setText(getString(R.string.title_style_mixed))
-//                        .setTabListener(tabListener));
     }
 
 
