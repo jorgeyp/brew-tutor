@@ -111,6 +111,7 @@ public class NavigationDrawerFragment extends Fragment {
                         getString(R.string.title_section_help)
                 }));
         mDrawerListView.setItemChecked(mCurrentSelectedPosition, true);
+        mDrawerListView.setFitsSystemWindows(true);
         return mDrawerListView;
     }
 
