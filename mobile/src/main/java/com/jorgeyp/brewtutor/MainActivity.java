@@ -61,6 +61,12 @@ public class MainActivity extends Activity
                 .commit();
     }
 
+    // TODO: Rename method, update argument and hook method into UI event
+    public void onButtonPressed(View v) {
+
+        Toast.makeText(v.getContext(), "test", Toast.LENGTH_SHORT).show();
+    }
+
     public void onSectionAttached(int number) {
         switch (number) {
             case 1:
