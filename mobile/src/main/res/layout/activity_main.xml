@@ -26,7 +26,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="Brew this"
-                android:id="@+id/button"
+                android:id="@+id/buttonBrew"
                 android:layout_row="6"
                 android:layout_column="1"
                 style="?android:attr/borderlessButtonStyle"

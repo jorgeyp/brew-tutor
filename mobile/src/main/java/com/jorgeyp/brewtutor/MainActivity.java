@@ -13,6 +13,7 @@ import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
 import android.support.v4.widget.DrawerLayout;
+import android.widget.Toast;
 import android.widget.Toolbar;
 
 
@@ -119,6 +120,10 @@ public class MainActivity extends Activity
     @Override
     public void onFragmentInteraction(Uri uri) {
 //        TODO
+    }
+
+    public void buttonBrewPressed(View view) {
+        Toast.makeText(view.getContext(), "Test", Toast.LENGTH_SHORT).show();
     }
 
     /**
