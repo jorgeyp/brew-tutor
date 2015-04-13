@@ -11,6 +11,7 @@ import android.support.v4.view.ViewPager;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Toast;
 
 import java.util.Locale;
 
@@ -88,6 +89,8 @@ public class BrewStylesFragment extends Fragment {
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
         View view = inflater.inflate(R.layout.fragment_brew_styles, container, false);
+
+
         view.setBackgroundColor(getResources().getColor(R.color.cards_background));
         // Create the adapter that will return a fragment for each of the three
         // primary sections of the activity.
@@ -106,6 +109,7 @@ public class BrewStylesFragment extends Fragment {
         if (mListener != null) {
             mListener.onFragmentInteraction(uri);
         }
+        Toast.makeText(getActivity(), "test", Toast.LENGTH_SHORT).show();
     }
 
     @Override

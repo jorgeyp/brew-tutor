@@ -13,6 +13,7 @@ import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
 import android.support.v4.widget.DrawerLayout;
+import android.widget.Toast;
 import android.widget.Toolbar;
 
 
@@ -58,6 +59,12 @@ public class MainActivity extends Activity
         fragmentManager.beginTransaction()
                 .replace(R.id.container, PlaceholderFragment.newInstance(position + 1))
                 .commit();
+    }
+
+    // TODO: Rename method, update argument and hook method into UI event
+    public void onButtonPressed(View v) {
+
+        Toast.makeText(v.getContext(), "test", Toast.LENGTH_SHORT).show();
     }
 
     public void onSectionAttached(int number) {
