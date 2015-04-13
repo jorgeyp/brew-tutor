@@ -5,4 +5,6 @@
     <color name="ipa">#D5BC26</color>
     <color name="amber_ale">#8D4C32</color>
     <color name="imperial_stout">#030403</color>
+    <color name="divider">#E0E0E0</color>
+    <color name="cards_background">#EEEEEE</color>
 </resources>

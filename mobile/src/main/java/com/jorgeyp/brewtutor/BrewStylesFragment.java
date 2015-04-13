@@ -2,6 +2,7 @@ package com.jorgeyp.brewtutor;
 
 import android.app.Activity;
 import android.app.FragmentManager;
+import android.graphics.Color;
 import android.net.Uri;
 import android.os.Bundle;
 import android.app.Fragment;
@@ -85,9 +86,9 @@ public class BrewStylesFragment extends Fragment {
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
-
+        // Inflate the layout for this fragment
         View view = inflater.inflate(R.layout.fragment_brew_styles, container, false);
-
+        view.setBackgroundColor(getResources().getColor(R.color.cards_background));
         // Create the adapter that will return a fragment for each of the three
         // primary sections of the activity.
         mSectionsPagerAdapter = new SectionsPagerAdapter(getFragmentManager());
@@ -96,7 +97,7 @@ public class BrewStylesFragment extends Fragment {
         mViewPager = (ViewPager) view.findViewById(R.id.pager);
 
         mViewPager.setAdapter(mSectionsPagerAdapter);
-        // Inflate the layout for this fragment
+
         return view;
     }
 
