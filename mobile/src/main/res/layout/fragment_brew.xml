@@ -111,11 +111,7 @@
                 android:layout_column="1"
                 style="?android:attr/borderlessButtonStyle"
                 android:padding="16dp"
-<<<<<<< HEAD
                 android:onClick="buttonBrewPressed"/>
-=======
-                android:onClick="onButtonPressed"/>
->>>>>>> origin/master
 
             <LinearLayout
                 android:background="@color/divider"
