@@ -1,8 +1,5 @@
 package com.jorgeyp.brewtutor.persistence;
 
-import android.content.Context;
-import android.database.sqlite.SQLiteDatabase;
-import android.database.sqlite.SQLiteOpenHelper;
 import android.provider.BaseColumns;
 
 /**
@@ -17,20 +14,20 @@ public class BeerDatabaseContract {
     private static final String COMMA_SEP = ",";
 
     public static final String SQL_CREATE_ENTRIES =
-            "CREATE TABLE " + Beer.TABLE_NAME + " (" +
-                    Beer._ID + " INTEGER PRIMARY KEY," +
-                    Beer.COLUMN_NAME_BEER_ID + TEXT_TYPE + COMMA_SEP +
-                    Beer.COLUMN_NAME_NAME + TEXT_TYPE + COMMA_SEP +
-                    Beer.COLUMN_NAME_STYLE + TEXT_TYPE + COMMA_SEP +
-                    Beer.COLUMN_NAME_DESCRIPTION + TEXT_TYPE + COMMA_SEP +
-                    Beer.COLUMN_NAME_TIME + INT_TYPE + COMMA_SEP +
-                    Beer.COLUMN_NAME_ABV + FLOAT_TYPE + COMMA_SEP +
-                    Beer.COLUMN_NAME_IBU + FLOAT_TYPE + COMMA_SEP +
-                    Beer.COLUMN_NAME_EBC + FLOAT_TYPE + 
+            "CREATE TABLE " + BeerEntry.TABLE_NAME + " (" +
+                    BeerEntry._ID + " INTEGER PRIMARY KEY," +
+                    BeerEntry.COLUMN_NAME_BEER_ID + TEXT_TYPE + COMMA_SEP +
+                    BeerEntry.COLUMN_NAME_NAME + TEXT_TYPE + COMMA_SEP +
+                    BeerEntry.COLUMN_NAME_STYLE + TEXT_TYPE + COMMA_SEP +
+                    BeerEntry.COLUMN_NAME_DESCRIPTION + TEXT_TYPE + COMMA_SEP +
+                    BeerEntry.COLUMN_NAME_TIME + INT_TYPE + COMMA_SEP +
+                    BeerEntry.COLUMN_NAME_ABV + FLOAT_TYPE + COMMA_SEP +
+                    BeerEntry.COLUMN_NAME_IBU + FLOAT_TYPE + COMMA_SEP +
+                    BeerEntry.COLUMN_NAME_EBC + FLOAT_TYPE +
             " )";
 
     public static final String SQL_DELETE_ENTRIES =
-            "DROP TABLE IF EXISTS " + Beer.TABLE_NAME;
+            "DROP TABLE IF EXISTS " + BeerEntry.TABLE_NAME;
 
     // Empty constructor prevents accidental instantiation of the contract class.
     public BeerDatabaseContract() {}
@@ -38,7 +35,7 @@ public class BeerDatabaseContract {
     /**
      * Inner class that defines the table contents.
      */
-    public static abstract class Beer implements BaseColumns {
+    public static abstract class BeerEntry implements BaseColumns {
         public static final String TABLE_NAME = "beer";
         public static final String COLUMN_NAME_BEER_ID = "beerid";
         public static final String COLUMN_NAME_NAME = "name";
