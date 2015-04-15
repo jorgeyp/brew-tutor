@@ -35,6 +35,8 @@ public class MainActivity extends Activity
      */
     private CharSequence mTitle;
 
+    BeerDatabaseHelper mdBHelper;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -55,7 +57,7 @@ public class MainActivity extends Activity
                 (DrawerLayout) findViewById(R.id.drawer_layout));
 
         // Create DB helper and database.
-        BeerDatabaseHelper mdBHelper = new BeerDatabaseHelper(this);
+        mdBHelper = new BeerDatabaseHelper(this);
         SQLiteDatabase db = mdBHelper.getWritableDatabase();
 
         ContentValues values = new ContentValues();
