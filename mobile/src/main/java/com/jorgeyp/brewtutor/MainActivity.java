@@ -5,6 +5,8 @@ import android.app.Activity;
 import android.app.ActionBar;
 import android.app.Fragment;
 import android.app.FragmentManager;
+import android.content.ContentValues;
+import android.database.sqlite.SQLiteDatabase;
 import android.net.Uri;
 import android.os.Bundle;
 import android.view.LayoutInflater;
@@ -15,6 +17,9 @@ import android.view.ViewGroup;
 import android.support.v4.widget.DrawerLayout;
 import android.widget.Toast;
 import android.widget.Toolbar;
+
+import com.jorgeyp.brewtutor.persistence.BeerDatabaseContract;
+import com.jorgeyp.brewtutor.persistence.BeerDatabaseHelper;
 
 
 public class MainActivity extends Activity
@@ -49,6 +54,45 @@ public class MainActivity extends Activity
                 R.id.navigation_drawer,
                 (DrawerLayout) findViewById(R.id.drawer_layout));
 
+        // Create DB helper and database.
+        BeerDatabaseHelper mdBHelper = new BeerDatabaseHelper(this);
+        SQLiteDatabase db = mdBHelper.getWritableDatabase();
+
+        ContentValues values = new ContentValues();
+        values.put(BeerDatabaseContract.Beer.COLUMN_NAME_BEER_ID, "0");
+        values.put(BeerDatabaseContract.Beer.COLUMN_NAME_NAME, "Light Lager");
+        values.put(BeerDatabaseContract.Beer.COLUMN_NAME_STYLE, "Lager");
+        values.put(BeerDatabaseContract.Beer.COLUMN_NAME_DESCRIPTION, "");
+        values.put(BeerDatabaseContract.Beer.COLUMN_NAME_TIME, "5");
+        values.put(BeerDatabaseContract.Beer.COLUMN_NAME_ABV, "3.4");
+        values.put(BeerDatabaseContract.Beer.COLUMN_NAME_IBU, "9.4");
+        values.put(BeerDatabaseContract.Beer.COLUMN_NAME_EBC, "5.5");
+
+        long newRowId = db.insert(BeerDatabaseContract.Beer.TABLE_NAME, null, values);
+
+        values = new ContentValues();
+        values.put(BeerDatabaseContract.Beer.COLUMN_NAME_BEER_ID, "1");
+        values.put(BeerDatabaseContract.Beer.COLUMN_NAME_NAME, "European Lager");
+        values.put(BeerDatabaseContract.Beer.COLUMN_NAME_STYLE, "Lager");
+        values.put(BeerDatabaseContract.Beer.COLUMN_NAME_DESCRIPTION, "");
+        values.put(BeerDatabaseContract.Beer.COLUMN_NAME_TIME, "5");
+        values.put(BeerDatabaseContract.Beer.COLUMN_NAME_ABV, "4.6");
+        values.put(BeerDatabaseContract.Beer.COLUMN_NAME_IBU, "25.7");
+        values.put(BeerDatabaseContract.Beer.COLUMN_NAME_EBC, "5.6");
+
+        newRowId = db.insert(BeerDatabaseContract.Beer.TABLE_NAME, null, values);
+
+        values = new ContentValues();
+        values.put(BeerDatabaseContract.Beer.COLUMN_NAME_BEER_ID, "2");
+        values.put(BeerDatabaseContract.Beer.COLUMN_NAME_NAME, "Spring Beer");
+        values.put(BeerDatabaseContract.Beer.COLUMN_NAME_STYLE, "Ale");
+        values.put(BeerDatabaseContract.Beer.COLUMN_NAME_DESCRIPTION, "");
+        values.put(BeerDatabaseContract.Beer.COLUMN_NAME_TIME, "5");
+        values.put(BeerDatabaseContract.Beer.COLUMN_NAME_ABV, "4.5");
+        values.put(BeerDatabaseContract.Beer.COLUMN_NAME_IBU, "34.6");
+        values.put(BeerDatabaseContract.Beer.COLUMN_NAME_EBC, "9.3");
+
+        newRowId = db.insert(BeerDatabaseContract.Beer.TABLE_NAME, null, values);
 
     }
 
