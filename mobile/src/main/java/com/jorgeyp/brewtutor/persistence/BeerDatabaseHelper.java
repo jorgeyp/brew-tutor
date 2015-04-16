@@ -107,14 +107,14 @@ public class BeerDatabaseHelper extends SQLiteOpenHelper {
         if (cursor.moveToFirst()) {
             do {
                 beer = new Beer();
-                beer.setId(cursor.getInt(0));
-                beer.setName(cursor.getString(1));
-                beer.setStyle(cursor.getString(2));
-                beer.setDescription(cursor.getString(3));
-                beer.setTime(cursor.getInt(4));
-                beer.setAbv(cursor.getFloat(5));
-                beer.setIbu(cursor.getFloat(6));
-                beer.setEbc(cursor.getFloat(7));
+                beer.setId(cursor.getInt(1));
+                beer.setName(cursor.getString(2));
+                beer.setStyle(cursor.getString(3));
+                beer.setDescription(cursor.getString(4));
+                beer.setTime(cursor.getInt(5));
+                beer.setAbv(cursor.getFloat(6));
+                beer.setIbu(cursor.getFloat(7));
+                beer.setEbc(cursor.getFloat(8));
                 beers.add(beer);
             } while (cursor.moveToNext());
         }

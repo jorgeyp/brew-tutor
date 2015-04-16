@@ -26,4 +26,13 @@
 <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
     <string name="brew_button_text">Brew this</string>
+    <string name="beer_name">Beer name</string>
+    <string name="beer_time">Time</string>
+    <string name="beer_abv">ABV</string>
+    <string name="beer_ibu">IBU</string>
+    <string name="beer_ebc">EBC</string>
+    <string name="time_units">" weeks"</string>
+    <string name="abv_units">" %"</string>
+    <string name="ibu_units">" IBU"</string>
+    <string name="ebc_units">" EBC"</string>
 </resources>

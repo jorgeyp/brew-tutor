@@ -13,17 +13,18 @@
         android:layout_height="fill_parent">
 
         <ImageView
-            android:id="@+id/imageView"
+            android:id="@+id/beerImage"
             android:layout_width="wrap_content"
             android:layout_height="220dp"
             android:layout_column="0"
             android:layout_row="0"
             android:layout_rowSpan="7"
             android:adjustViewBounds="true"
-            android:scaleType="fitXY"/>
+            android:scaleType="fitXY"
+            android:src="@drawable/light_lager" />
 
         <TextView
-            android:id="@+id/textView"
+            android:id="@+id/nameText"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_column="1"
@@ -31,10 +32,11 @@
             android:paddingLeft="16dp"
             android:paddingRight="16dp"
             android:paddingTop="16dp"
-            android:textAppearance="?android:attr/textAppearanceLarge" />
+            android:textAppearance="?android:attr/textAppearanceLarge"
+            android:text="@string/beer_name"/>
 
         <TextView
-            android:id="@+id/textView2"
+            android:id="@+id/timeText"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_column="1"
@@ -42,10 +44,11 @@
             android:paddingLeft="16dp"
             android:paddingRight="16dp"
             android:textAppearance="?android:attr/textAppearanceMedium"
-            android:textColor="@color/amber_ale" />
+            android:textColor="@color/amber_ale"
+            android:text="@string/beer_time"/>
 
         <TextView
-            android:id="@+id/textView3"
+            android:id="@+id/abvText"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_column="1"
@@ -53,10 +56,11 @@
             android:paddingLeft="16dp"
             android:paddingRight="16dp"
             android:textAppearance="?android:attr/textAppearanceMedium"
-            android:textColor="@color/amber_ale" />
+            android:textColor="@color/amber_ale"
+            android:text="@string/beer_abv"/>
 
         <TextView
-            android:id="@+id/textView4"
+            android:id="@+id/ibuText"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_column="1"
@@ -64,10 +68,11 @@
             android:paddingLeft="16dp"
             android:paddingRight="16dp"
             android:textAppearance="?android:attr/textAppearanceMedium"
-            android:textColor="@color/amber_ale" />
+            android:textColor="@color/amber_ale"
+            android:text="@string/beer_ibu"/>
 
         <TextView
-            android:id="@+id/textView5"
+            android:id="@+id/ebcText"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_column="1"
@@ -76,7 +81,8 @@
             android:paddingLeft="16dp"
             android:paddingRight="16dp"
             android:textAppearance="?android:attr/textAppearanceMedium"
-            android:textColor="@color/amber_ale" />
+            android:textColor="@color/amber_ale"
+            android:text="@string/beer_ebc"/>
 
         ﻿
 
