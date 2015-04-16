@@ -38,8 +38,7 @@ public class MainActivity extends Activity
      */
     private CharSequence mTitle;
 
-    private BeerDatabaseHelper mdBHelper;
-    private List<Beer> beers;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -60,9 +59,7 @@ public class MainActivity extends Activity
                 R.id.navigation_drawer,
                 (DrawerLayout) findViewById(R.id.drawer_layout));
 
-        // Create DB helper and database.
-        mdBHelper = new BeerDatabaseHelper(this);
-        beers = mdBHelper.getAllBeers();
+
 
     }
 
@@ -143,7 +140,7 @@ public class MainActivity extends Activity
     }
 
     public void buttonBrewPressed(View view) {
-        Toast.makeText(view.getContext(), beers.get(0).toString(), Toast.LENGTH_SHORT).show();
+        Toast.makeText(view.getContext(), "Test", Toast.LENGTH_SHORT).show();
     }
 
     /**
