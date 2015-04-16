@@ -9,6 +9,7 @@ import android.support.v13.app.FragmentPagerAdapter;
 import android.support.v4.view.ViewPager;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -228,10 +229,11 @@ public class BrewStylesFragment extends Fragment {
 
             // Create DB helper and database.
             mdBHelper = new BeerDatabaseHelper(view.getContext());
+
             beers = mdBHelper.getAllBeers();
 
             mRecyclerView = (RecyclerView) view.findViewById(R.id.beer_cards);
-
+//
             // use this setting to improve performance if you know that changes
             // in content do not change the layout size of the RecyclerView
             mRecyclerView.setHasFixedSize(true);
@@ -241,6 +243,7 @@ public class BrewStylesFragment extends Fragment {
             mRecyclerView.setLayoutManager(mLayoutManager);
 
             // specify an adapter (see also next example)
+            Log.d("Setting beer adapter", beers.toString());
             mAdapter = new BeerAdapter(beers);
             mRecyclerView.setAdapter(mAdapter);
 
