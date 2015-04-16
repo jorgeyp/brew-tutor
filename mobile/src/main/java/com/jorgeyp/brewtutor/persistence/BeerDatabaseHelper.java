@@ -42,7 +42,7 @@ public class BeerDatabaseHelper extends SQLiteOpenHelper {
         ContentValues values = new ContentValues();
         values.put(BeerDatabaseContract.BeerEntry.COLUMN_NAME_BEER_ID, "0");
         values.put(BeerDatabaseContract.BeerEntry.COLUMN_NAME_NAME, "Light Lager");
-        values.put(BeerDatabaseContract.BeerEntry.COLUMN_NAME_STYLE, "Lager");
+        values.put(BeerDatabaseContract.BeerEntry.COLUMN_NAME_STYLE, "0");
         values.put(BeerDatabaseContract.BeerEntry.COLUMN_NAME_DESCRIPTION, "");
         values.put(BeerDatabaseContract.BeerEntry.COLUMN_NAME_TIME, "5");
         values.put(BeerDatabaseContract.BeerEntry.COLUMN_NAME_ABV, "3.4");
@@ -54,7 +54,7 @@ public class BeerDatabaseHelper extends SQLiteOpenHelper {
         values = new ContentValues();
         values.put(BeerDatabaseContract.BeerEntry.COLUMN_NAME_BEER_ID, "1");
         values.put(BeerDatabaseContract.BeerEntry.COLUMN_NAME_NAME, "European Lager");
-        values.put(BeerDatabaseContract.BeerEntry.COLUMN_NAME_STYLE, "Lager");
+        values.put(BeerDatabaseContract.BeerEntry.COLUMN_NAME_STYLE, "0");
         values.put(BeerDatabaseContract.BeerEntry.COLUMN_NAME_DESCRIPTION, "");
         values.put(BeerDatabaseContract.BeerEntry.COLUMN_NAME_TIME, "5");
         values.put(BeerDatabaseContract.BeerEntry.COLUMN_NAME_ABV, "4.6");
@@ -66,7 +66,7 @@ public class BeerDatabaseHelper extends SQLiteOpenHelper {
         values = new ContentValues();
         values.put(BeerDatabaseContract.BeerEntry.COLUMN_NAME_BEER_ID, "2");
         values.put(BeerDatabaseContract.BeerEntry.COLUMN_NAME_NAME, "Spring Beer");
-        values.put(BeerDatabaseContract.BeerEntry.COLUMN_NAME_STYLE, "Ale");
+        values.put(BeerDatabaseContract.BeerEntry.COLUMN_NAME_STYLE, "1");
         values.put(BeerDatabaseContract.BeerEntry.COLUMN_NAME_DESCRIPTION, "");
         values.put(BeerDatabaseContract.BeerEntry.COLUMN_NAME_TIME, "5");
         values.put(BeerDatabaseContract.BeerEntry.COLUMN_NAME_ABV, "4.5");
@@ -109,7 +109,7 @@ public class BeerDatabaseHelper extends SQLiteOpenHelper {
                 beer = new Beer();
                 beer.setId(cursor.getInt(1));
                 beer.setName(cursor.getString(2));
-                beer.setStyle(cursor.getString(3));
+                beer.setStyle(cursor.getInt(3));
                 beer.setDescription(cursor.getString(4));
                 beer.setTime(cursor.getInt(5));
                 beer.setAbv(cursor.getFloat(6));
@@ -119,6 +119,35 @@ public class BeerDatabaseHelper extends SQLiteOpenHelper {
             } while (cursor.moveToNext());
         }
         Log.d("getAllBeers()", beers.toString());
+
+        return beers;
+    }
+
+    public List<Beer> getAllBeers(int style) {
+        List<Beer> beers = new ArrayList<Beer>();
+
+        String query = "SELECT * FROM " + BeerDatabaseContract.BeerEntry.TABLE_NAME;
+
+        SQLiteDatabase db = this.getWritableDatabase();
+        Cursor cursor = db.rawQuery(query, null);
+
+        Beer beer = null;
+        if (cursor.moveToFirst()) {
+            do {
+                beer = new Beer();
+                beer.setId(cursor.getInt(1));
+                beer.setName(cursor.getString(2));
+                beer.setStyle(cursor.getInt(3));
+                beer.setDescription(cursor.getString(4));
+                beer.setTime(cursor.getInt(5));
+                beer.setAbv(cursor.getFloat(6));
+                beer.setIbu(cursor.getFloat(7));
+                beer.setEbc(cursor.getFloat(8));
+                if (beer.getStyle() == style)
+                    beers.add(beer);
+            } while (cursor.moveToNext());
+        }
+        Log.d("getAllBeers(" + style + ")", beers.toString());
 
         return beers;
     }

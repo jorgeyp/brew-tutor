@@ -2,11 +2,9 @@ package com.jorgeyp.brewtutor;
 
 import java.util.Locale;
 
-import android.app.ActionBar;
 import android.app.Activity;
 import android.app.Fragment;
 import android.app.FragmentManager;
-import android.app.FragmentTransaction;
 import android.support.v13.app.FragmentPagerAdapter;
 import android.os.Bundle;
 import android.support.v4.view.ViewPager;
@@ -28,7 +26,7 @@ public class BrewActivity extends Activity {
      * may be best to switch to a
      * {@link android.support.v13.app.FragmentStatePagerAdapter}.
      */
-    SectionsPagerAdapter mSectionsPagerAdapter;
+    StylesPagerAdapter mStylesPagerAdapter;
 
     /**
      * The {@link ViewPager} that will host the section contents.
@@ -47,12 +45,12 @@ public class BrewActivity extends Activity {
 
         // Create the adapter that will return a fragment for each of the three
         // primary sections of the activity.
-        mSectionsPagerAdapter = new SectionsPagerAdapter(getFragmentManager());
+        mStylesPagerAdapter = new StylesPagerAdapter(getFragmentManager());
 
         // Set up the ViewPager with the sections adapter.
         mViewPager = (ViewPager) findViewById(R.id.pager);
 
-        mViewPager.setAdapter(mSectionsPagerAdapter);
+        mViewPager.setAdapter(mStylesPagerAdapter);
 
 
     }
@@ -85,9 +83,9 @@ public class BrewActivity extends Activity {
      * A {@link FragmentPagerAdapter} that returns a fragment corresponding to
      * one of the sections/tabs/pages.
      */
-    public class SectionsPagerAdapter extends FragmentPagerAdapter {
+    public class StylesPagerAdapter extends FragmentPagerAdapter {
 
-        public SectionsPagerAdapter(FragmentManager fm) {
+        public StylesPagerAdapter(FragmentManager fm) {
             super(fm);
         }
 
@@ -95,7 +93,7 @@ public class BrewActivity extends Activity {
         public Fragment getItem(int position) {
             // getItem is called to instantiate the fragment for the given page.
             // Return a StyleFragment (defined as a static inner class below).
-            return StyleFragment.newInstance(position + 1);
+            return StylePageFragment.newInstance(position + 1);
         }
 
         @Override
@@ -124,26 +122,26 @@ public class BrewActivity extends Activity {
     /**
      * A placeholder fragment containing a simple view.
      */
-    public static class StyleFragment extends Fragment {
+    public static class StylePageFragment extends Fragment {
         /**
          * The fragment argument representing the section number for this
          * fragment.
          */
-        private static final String ARG_SECTION_NUMBER = "section_number";
+        public static final String STYLE_SECTION = "section_number";
 
         /**
          * Returns a new instance of this fragment for the given section
          * number.
          */
-        public static StyleFragment newInstance(int sectionNumber) {
-            StyleFragment fragment = new StyleFragment();
+        public static StylePageFragment newInstance(int sectionNumber) {
+            StylePageFragment fragment = new StylePageFragment();
             Bundle args = new Bundle();
-            args.putInt(ARG_SECTION_NUMBER, sectionNumber);
+            args.putInt(STYLE_SECTION, sectionNumber);
             fragment.setArguments(args);
             return fragment;
         }
 
-        public StyleFragment() {
+        public StylePageFragment() {
         }
 
         @Override

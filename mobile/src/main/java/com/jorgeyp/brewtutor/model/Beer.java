@@ -6,7 +6,7 @@ package com.jorgeyp.brewtutor.model;
 public class Beer {
     private int id;
     private String name;
-    private String style;
+    private int style;
     private String description;
     private int time;
     private float abv;
@@ -15,7 +15,7 @@ public class Beer {
 
     public Beer() {}
 
-    public Beer(String name, String style, String description, int time, float abv, float ibu, float ebc) {
+    public Beer(String name, int style, String description, int time, float abv, float ibu, float ebc) {
         super();
         this.name = name;
         this.style = style;
@@ -42,11 +42,11 @@ public class Beer {
         this.name = name;
     }
 
-    public String getStyle() {
+    public int getStyle() {
         return style;
     }
 
-    public void setStyle(String style) {
+    public void setStyle(int style) {
         this.style = style;
     }
 

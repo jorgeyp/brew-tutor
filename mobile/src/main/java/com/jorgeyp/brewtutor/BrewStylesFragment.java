@@ -163,7 +163,7 @@ public class BrewStylesFragment extends Fragment {
         public Fragment getItem(int position) {
             // getItem is called to instantiate the fragment for the given page.
             // Return a StyleFragment (defined as a static inner class below).
-            return StyleFragment.newInstance(position + 1);
+            return StyleFragment.newInstance(position);
         }
 
         @Override
@@ -230,7 +230,7 @@ public class BrewStylesFragment extends Fragment {
             // Create DB helper and database.
             mdBHelper = new BeerDatabaseHelper(view.getContext());
 
-            beers = mdBHelper.getAllBeers();
+            beers = mdBHelper.getAllBeers(getArguments().getInt(BrewActivity.StylePageFragment.STYLE_SECTION));
 
             mRecyclerView = (RecyclerView) view.findViewById(R.id.beer_cards);
 //

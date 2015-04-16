@@ -18,7 +18,7 @@ public class BeerDatabaseContract {
                     BeerEntry._ID + " INTEGER PRIMARY KEY," +
                     BeerEntry.COLUMN_NAME_BEER_ID + TEXT_TYPE + COMMA_SEP +
                     BeerEntry.COLUMN_NAME_NAME + TEXT_TYPE + COMMA_SEP +
-                    BeerEntry.COLUMN_NAME_STYLE + TEXT_TYPE + COMMA_SEP +
+                    BeerEntry.COLUMN_NAME_STYLE + INT_TYPE + COMMA_SEP +
                     BeerEntry.COLUMN_NAME_DESCRIPTION + TEXT_TYPE + COMMA_SEP +
                     BeerEntry.COLUMN_NAME_TIME + INT_TYPE + COMMA_SEP +
                     BeerEntry.COLUMN_NAME_ABV + FLOAT_TYPE + COMMA_SEP +
