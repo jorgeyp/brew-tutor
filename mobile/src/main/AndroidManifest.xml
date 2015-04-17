@@ -24,6 +24,14 @@
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value="com.jorgeyp.brewtutor.MainActivity" />
         </activity>
+        <activity
+            android:name=".MashingActivity"
+            android:label="@string/title_activity_mashing"
+            android:parentActivityName=".MainActivity" >
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.jorgeyp.brewtutor.MainActivity" />
+        </activity>
     </application>
 
 </manifest>

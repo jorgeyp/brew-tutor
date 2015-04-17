@@ -93,7 +93,7 @@
             android:layout_height="wrap_content"
             android:layout_column="1"
             android:layout_row="6"
-            android:onClick="buttonBrewPressed"
+            android:onClick="buttonStartBrewingPressed"
             android:padding="16dp"
             android:text="@string/brew_button_text" />
 

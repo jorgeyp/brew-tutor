@@ -35,4 +35,5 @@
     <string name="abv_units">" %"</string>
     <string name="ibu_units">" IBU"</string>
     <string name="ebc_units">" EBC"</string>
+    <string name="title_activity_mashing">MashingActivity</string>
 </resources>

@@ -6,9 +6,11 @@ import android.app.ActionBar;
 import android.app.Fragment;
 import android.app.FragmentManager;
 import android.content.ContentValues;
+import android.content.Intent;
 import android.database.sqlite.SQLiteDatabase;
 import android.net.Uri;
 import android.os.Bundle;
+import android.support.v7.widget.CardView;
 import android.support.v7.widget.RecyclerView;
 import android.util.Log;
 import android.view.LayoutInflater;
@@ -140,8 +142,13 @@ public class MainActivity extends Activity
 //        TODO
     }
 
-    public void buttonBrewPressed(View view) {
-        Toast.makeText(view.getContext(), "Test", Toast.LENGTH_SHORT).show();
+    public void buttonStartBrewingPressed(View view) {
+
+        Intent intent = new Intent(this, MashingActivity.class);
+
+
+
+        Toast.makeText(view.getContext(), view.getTag().toString(), Toast.LENGTH_LONG).show();
     }
 
     /**

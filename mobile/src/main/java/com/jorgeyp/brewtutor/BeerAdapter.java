@@ -6,6 +6,7 @@ import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
 
@@ -44,6 +45,7 @@ public class BeerAdapter extends RecyclerView.Adapter<BeerAdapter.BeerViewHolder
         beerViewHolder.abvTextView.setText(String.valueOf(beer.getAbv()) + abvUnits);
         beerViewHolder.ibuTextView.setText(String.valueOf(beer.getIbu()) + ibuUnits);
         beerViewHolder.ebcTextView.setText(String.valueOf(beer.getEbc()) + ebcUnits);
+        beerViewHolder.button.setTag(beer); // To retrieve the beer in main activity
     }
 
     @Override
@@ -65,6 +67,7 @@ public class BeerAdapter extends RecyclerView.Adapter<BeerAdapter.BeerViewHolder
         protected TextView ibuTextView;
         protected TextView ebcTextView;
         protected Context context;
+        protected Button button;
 
         public BeerViewHolder(View v) {
             super(v);
@@ -76,6 +79,7 @@ public class BeerAdapter extends RecyclerView.Adapter<BeerAdapter.BeerViewHolder
             ibuTextView = (TextView) v.findViewById(R.id.ibuText);
             ebcTextView = (TextView) v.findViewById(R.id.ebcText);
             context = v.getContext();
+            button = (Button) v.findViewById(R.id.buttonBrew);
         }
     }
 }
