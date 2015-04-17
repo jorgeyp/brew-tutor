@@ -17,6 +17,7 @@ import android.widget.Toast;
 
 import com.jorgeyp.brewtutor.model.Beer;
 import com.jorgeyp.brewtutor.persistence.BeerDatabaseHelper;
+import com.melnykov.fab.FloatingActionButton;
 
 import java.util.List;
 import java.util.Locale;
@@ -233,6 +234,8 @@ public class BrewStylesFragment extends Fragment {
             beers = mdBHelper.getAllBeers(getArguments().getInt(BrewActivity.StylePageFragment.STYLE_SECTION));
 
             mRecyclerView = (RecyclerView) view.findViewById(R.id.beer_cards);
+            FloatingActionButton fab = (FloatingActionButton) view.findViewById(R.id.fab);
+            fab.attachToRecyclerView(mRecyclerView);
 //
             // use this setting to improve performance if you know that changes
             // in content do not change the layout size of the RecyclerView
@@ -247,8 +250,35 @@ public class BrewStylesFragment extends Fragment {
             mAdapter = new BeerAdapter(beers);
             mRecyclerView.setAdapter(mAdapter);
 
+            mRecyclerView.setOnScrollListener(onScrollListener);
+
             return view;
         }
+
+        public RecyclerView.OnScrollListener onScrollListener = new RecyclerView.OnScrollListener() {
+            boolean hideToolBar = false;
+            @Override
+            public void onScrollStateChanged(RecyclerView recyclerView, int newState) {
+                super.onScrollStateChanged(recyclerView, newState);
+                if (hideToolBar) {
+                    getActivity().getActionBar().hide();
+                } else {
+                    getActivity().getActionBar().show();
+                }
+            }
+
+            @Override
+            public void onScrolled(RecyclerView recyclerView, int dx, int dy) {
+                super.onScrolled(recyclerView, dx, dy);
+                if (dy > 20) { // 40?
+                    hideToolBar = true;
+
+                } else if (dy < -5) {
+                    hideToolBar = false;
+                }
+            }
+        };
+
     }
 
 }

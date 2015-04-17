@@ -74,6 +74,18 @@ public class BeerDatabaseHelper extends SQLiteOpenHelper {
         values.put(BeerDatabaseContract.BeerEntry.COLUMN_NAME_EBC, "9.3");
         newRowId = db.insert(BeerDatabaseContract.BeerEntry.TABLE_NAME, null, values);
         Log.d("inserted ", Long.toString(newRowId));
+
+        values = new ContentValues();
+        values.put(BeerDatabaseContract.BeerEntry.COLUMN_NAME_BEER_ID, "3");
+        values.put(BeerDatabaseContract.BeerEntry.COLUMN_NAME_NAME, "Premium American Lager");
+        values.put(BeerDatabaseContract.BeerEntry.COLUMN_NAME_STYLE, "0");
+        values.put(BeerDatabaseContract.BeerEntry.COLUMN_NAME_DESCRIPTION, "");
+        values.put(BeerDatabaseContract.BeerEntry.COLUMN_NAME_TIME, "5");
+        values.put(BeerDatabaseContract.BeerEntry.COLUMN_NAME_ABV, "5.5");
+        values.put(BeerDatabaseContract.BeerEntry.COLUMN_NAME_IBU, "19");
+        values.put(BeerDatabaseContract.BeerEntry.COLUMN_NAME_EBC, "7.4");
+        newRowId = db.insert(BeerDatabaseContract.BeerEntry.TABLE_NAME, null, values);
+        Log.d("inserted ", Long.toString(newRowId));
     }
 
     @Override
