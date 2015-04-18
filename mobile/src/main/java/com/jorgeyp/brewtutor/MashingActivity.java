@@ -3,14 +3,20 @@ package com.jorgeyp.brewtutor;
 import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
+import android.os.SystemClock;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.view.View;
+import android.widget.Button;
+import android.widget.Chronometer;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import com.jorgeyp.brewtutor.model.Beer;
 
 
-public class MashingActivity extends Activity {
+public class MashingActivity extends Activity implements View.OnClickListener {
+    private Chronometer chronometer;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -19,8 +25,13 @@ public class MashingActivity extends Activity {
 
         Intent intent = getIntent();
         Beer beer = (Beer) intent.getSerializableExtra("beer");
-        Toast.makeText(getApplicationContext(), beer.toString(), Toast.LENGTH_LONG).show();
+//        Toast.makeText(getApplicationContext(), beer.toString(), Toast.LENGTH_LONG).show();
 
+        TextView temperatureText = (TextView) findViewById(R.id.mashingTempText);
+        temperatureText.setText(String.valueOf(beer.getMashTemp()) + getString(R.string.temp_units));
+
+        chronometer = (Chronometer) findViewById(R.id.chronometer);
+        ((Button) findViewById(R.id.startButton)).setOnClickListener(this);
     }
 
 
@@ -44,5 +55,15 @@ public class MashingActivity extends Activity {
         }
 
         return super.onOptionsItemSelected(item);
+    }
+
+    @Override
+    public void onClick(View v) {
+        switch(v.getId()) {
+            case R.id.startButton:
+                chronometer.setBase(SystemClock.elapsedRealtime());
+                chronometer.start();
+                break;
+        }
     }
 }

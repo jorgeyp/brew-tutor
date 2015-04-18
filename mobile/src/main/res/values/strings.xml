@@ -36,4 +36,15 @@
     <string name="ibu_units">" IBU"</string>
     <string name="ebc_units">" EBC"</string>
     <string name="title_activity_mashing">MashingActivity</string>
+    <string name="step1">Step 1: Mashing</string>
+    <string name="start_mashing">Start!</string>
+    <string name="mashing_temp">0°C</string>
+    <string name="mashing_before">Before you start:</string>
+    <string name="before_mashing_1">1. Heat the water to 77ºC</string>
+    <string name="before_mashing_2">2. Prepare the ingredients</string>
+    <string name="mashing_instructions">Mashing instructions:</string>
+    <string name="next_step">Next step</string>
+    <string name="mashing_instructions_1">1. Add the grain slowly</string>
+    <string name="mashing_instructions_2">2. Dissolve any lumps, cover the pot and monitor the temperature.</string>
+    <string name="temp_units">ºC</string>
 </resources>

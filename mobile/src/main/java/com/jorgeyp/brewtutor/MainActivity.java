@@ -149,7 +149,7 @@ public class MainActivity extends Activity
         intent.putExtra("beer", beer);
 //        Globals.beer = beer;// TODO CAMBIAR ESTO QUE YE HORRIBLE
         startActivity(intent);
-        Toast.makeText(view.getContext(), view.getTag().toString(), Toast.LENGTH_LONG).show();
+//        Toast.makeText(view.getContext(), view.getTag().toString(), Toast.LENGTH_LONG).show();
     }
 
     /**
