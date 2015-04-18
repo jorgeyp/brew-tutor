@@ -1,9 +1,13 @@
 package com.jorgeyp.brewtutor;
 
 import android.app.Activity;
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.widget.Toast;
+
+import com.jorgeyp.brewtutor.model.Beer;
 
 
 public class MashingActivity extends Activity {
@@ -12,6 +16,11 @@ public class MashingActivity extends Activity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_mashing);
+
+        Intent intent = getIntent();
+        Beer beer = (Beer) intent.getSerializableExtra("beer");
+        Toast.makeText(getApplicationContext(), beer.toString(), Toast.LENGTH_LONG).show();
+
     }
 
 

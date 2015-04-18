@@ -48,6 +48,9 @@ public class BeerDatabaseHelper extends SQLiteOpenHelper {
         values.put(BeerDatabaseContract.BeerEntry.COLUMN_NAME_ABV, "3.4");
         values.put(BeerDatabaseContract.BeerEntry.COLUMN_NAME_IBU, "9.4");
         values.put(BeerDatabaseContract.BeerEntry.COLUMN_NAME_EBC, "5.5");
+        values.put(BeerDatabaseContract.BeerEntry.COLUMN_NAME_MASH_VOL, "9.3");
+        values.put(BeerDatabaseContract.BeerEntry.COLUMN_NAME_MASH_TIME, "60");
+        values.put(BeerDatabaseContract.BeerEntry.COLUMN_NAME_MASH_TEMP, "65");
         newRowId = db.insert(BeerDatabaseContract.BeerEntry.TABLE_NAME, null, values);
         Log.d("inserted ", Long.toString(newRowId));
 
@@ -60,6 +63,9 @@ public class BeerDatabaseHelper extends SQLiteOpenHelper {
         values.put(BeerDatabaseContract.BeerEntry.COLUMN_NAME_ABV, "4.6");
         values.put(BeerDatabaseContract.BeerEntry.COLUMN_NAME_IBU, "25.7");
         values.put(BeerDatabaseContract.BeerEntry.COLUMN_NAME_EBC, "5.6");
+        values.put(BeerDatabaseContract.BeerEntry.COLUMN_NAME_MASH_VOL, "14");
+        values.put(BeerDatabaseContract.BeerEntry.COLUMN_NAME_MASH_TIME, "60");
+        values.put(BeerDatabaseContract.BeerEntry.COLUMN_NAME_MASH_TEMP, "65");
         newRowId = db.insert(BeerDatabaseContract.BeerEntry.TABLE_NAME, null, values);
         Log.d("inserted ", Long.toString(newRowId));
 
@@ -72,6 +78,9 @@ public class BeerDatabaseHelper extends SQLiteOpenHelper {
         values.put(BeerDatabaseContract.BeerEntry.COLUMN_NAME_ABV, "4.5");
         values.put(BeerDatabaseContract.BeerEntry.COLUMN_NAME_IBU, "34.6");
         values.put(BeerDatabaseContract.BeerEntry.COLUMN_NAME_EBC, "9.3");
+        values.put(BeerDatabaseContract.BeerEntry.COLUMN_NAME_MASH_VOL, "11.25");
+        values.put(BeerDatabaseContract.BeerEntry.COLUMN_NAME_MASH_TIME, "60");
+        values.put(BeerDatabaseContract.BeerEntry.COLUMN_NAME_MASH_TEMP, "65");
         newRowId = db.insert(BeerDatabaseContract.BeerEntry.TABLE_NAME, null, values);
         Log.d("inserted ", Long.toString(newRowId));
 
@@ -84,6 +93,9 @@ public class BeerDatabaseHelper extends SQLiteOpenHelper {
         values.put(BeerDatabaseContract.BeerEntry.COLUMN_NAME_ABV, "5.5");
         values.put(BeerDatabaseContract.BeerEntry.COLUMN_NAME_IBU, "19");
         values.put(BeerDatabaseContract.BeerEntry.COLUMN_NAME_EBC, "7.4");
+        values.put(BeerDatabaseContract.BeerEntry.COLUMN_NAME_MASH_VOL, "13");
+        values.put(BeerDatabaseContract.BeerEntry.COLUMN_NAME_MASH_TIME, "60");
+        values.put(BeerDatabaseContract.BeerEntry.COLUMN_NAME_MASH_TEMP, "65");
         newRowId = db.insert(BeerDatabaseContract.BeerEntry.TABLE_NAME, null, values);
         Log.d("inserted ", Long.toString(newRowId));
     }
@@ -127,6 +139,9 @@ public class BeerDatabaseHelper extends SQLiteOpenHelper {
                 beer.setAbv(cursor.getFloat(6));
                 beer.setIbu(cursor.getFloat(7));
                 beer.setEbc(cursor.getFloat(8));
+                beer.setMashVol(cursor.getFloat(9));
+                beer.setMashTime(cursor.getInt(10));
+                beer.setMashTemp(cursor.getInt(10));
                 beers.add(beer);
             } while (cursor.moveToNext());
         }
@@ -155,6 +170,9 @@ public class BeerDatabaseHelper extends SQLiteOpenHelper {
                 beer.setAbv(cursor.getFloat(6));
                 beer.setIbu(cursor.getFloat(7));
                 beer.setEbc(cursor.getFloat(8));
+                beer.setMashVol(cursor.getFloat(9));
+                beer.setMashTime(cursor.getInt(10));
+                beer.setMashTemp(cursor.getInt(10));
                 if (beer.getStyle() == style)
                     beers.add(beer);
             } while (cursor.moveToNext());

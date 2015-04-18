@@ -23,7 +23,10 @@ public class BeerDatabaseContract {
                     BeerEntry.COLUMN_NAME_TIME + INT_TYPE + COMMA_SEP +
                     BeerEntry.COLUMN_NAME_ABV + FLOAT_TYPE + COMMA_SEP +
                     BeerEntry.COLUMN_NAME_IBU + FLOAT_TYPE + COMMA_SEP +
-                    BeerEntry.COLUMN_NAME_EBC + FLOAT_TYPE +
+                    BeerEntry.COLUMN_NAME_EBC + FLOAT_TYPE + COMMA_SEP +
+                    BeerEntry.COLUMN_NAME_MASH_VOL + FLOAT_TYPE + COMMA_SEP +
+                    BeerEntry.COLUMN_NAME_MASH_TIME + INT_TYPE + COMMA_SEP +
+                    BeerEntry.COLUMN_NAME_MASH_TEMP + INT_TYPE +
             " )";
 
     public static final String SQL_DELETE_ENTRIES =
@@ -45,6 +48,10 @@ public class BeerDatabaseContract {
         public static final String COLUMN_NAME_ABV = "abv";
         public static final String COLUMN_NAME_IBU = "ibu";
         public static final String COLUMN_NAME_EBC = "ebc";
+        public static final String COLUMN_NAME_MASH_VOL = "mashvol";
+        public static final String COLUMN_NAME_MASH_TIME = "mashtime";
+        public static final String COLUMN_NAME_MASH_TEMP = "mashtemp";
+//        public static final String COLUMN_NAME_GRAINS = "grains";
     }
 }
 

@@ -145,9 +145,10 @@ public class MainActivity extends Activity
     public void buttonStartBrewingPressed(View view) {
 
         Intent intent = new Intent(this, MashingActivity.class);
-
-
-
+        Beer beer = (Beer) view.getTag();
+        intent.putExtra("beer", beer);
+//        Globals.beer = beer;// TODO CAMBIAR ESTO QUE YE HORRIBLE
+        startActivity(intent);
         Toast.makeText(view.getContext(), view.getTag().toString(), Toast.LENGTH_LONG).show();
     }
 
