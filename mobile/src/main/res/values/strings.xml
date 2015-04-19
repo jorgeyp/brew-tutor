@@ -44,7 +44,9 @@
     <string name="before_mashing_2">2. Prepare the ingredients</string>
     <string name="mashing_instructions">Mashing instructions:</string>
     <string name="next_step">Next step</string>
-    <string name="mashing_instructions_1">1. Add the grain slowly</string>
-    <string name="mashing_instructions_2">2. Dissolve any lumps, cover the pot and monitor the temperature.</string>
+    <string name="before_mashing_3">3. Add the grain slowly</string>
+    <string name="before_mashing_4">4. Dissolve any lumps, cover the pot and start the timer</string>
+    <string name="before_mashing_5">5. Monitor the temperature while it's mashing</string>
     <string name="temp_units">ºC</string>
+    <string name="timer_default">00:00</string>
 </resources>

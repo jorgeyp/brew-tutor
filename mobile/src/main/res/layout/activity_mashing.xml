@@ -18,22 +18,14 @@
         android:layout_alignParentTop="true"
         android:layout_alignParentStart="true" />
 
-    <Chronometer
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:id="@+id/chronometer"
-        android:layout_centerVertical="true"
-        android:layout_centerHorizontal="true"
-        android:textSize="100dp" />
-
     <Button
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="@string/start_mashing"
         android:id="@+id/startButton"
-        android:layout_below="@+id/chronometer"
-        android:layout_centerHorizontal="true"
-        style="@style/Button"/>
+        style="@style/Button"
+        android:layout_below="@+id/timer"
+        android:layout_alignStart="@+id/mashingTempText" />
 
     <TextView
         android:layout_width="wrap_content"
@@ -42,7 +34,7 @@
         android:text="@string/mashing_temp"
         android:id="@+id/mashingTempText"
         android:textSize="50dp"
-        android:layout_below="@+id/button"
+        android:layout_below="@+id/startButton"
         android:layout_centerHorizontal="true" />
 
     <TextView
@@ -78,40 +70,50 @@
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:textAppearance="?android:attr/textAppearanceMedium"
-        android:text="@string/mashing_instructions"
-        android:id="@+id/mashingInstructions"
-        android:layout_below="@+id/beforeMashing2"
+        android:textAppearance="?android:attr/textAppearanceSmall"
+        android:text="@string/before_mashing_3"
+        android:id="@+id/beforeMashing3"
+        android:textColor="@color/imperial_stout"
         android:layout_alignParentStart="true"
-        android:textColor="@color/imperial_stout" />
+        android:layout_below="@+id/beforeMashing2" />
 
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:textAppearance="?android:attr/textAppearanceSmall"
-        android:text="@string/mashing_instructions_1"
-        android:id="@+id/mashingInstructions1"
+        android:text="@string/before_mashing_4"
+        android:id="@+id/beforeMashing4"
         android:textColor="@color/imperial_stout"
-        android:layout_below="@+id/mashingInstructions"
-        android:layout_alignParentStart="true" />
-
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:textAppearance="?android:attr/textAppearanceSmall"
-        android:text="@string/mashing_instructions_2"
-        android:id="@+id/mashingInstructions2"
-        android:textColor="@color/imperial_stout"
-        android:layout_below="@+id/mashingInstructions1"
-        android:layout_alignEnd="@+id/beforeMashing1" />
+        android:layout_below="@+id/beforeMashing3"
+        android:layout_alignEnd="@+id/beforeMashing5" />
 
     <Button
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="@string/next_step"
         android:id="@+id/nextStepButton"
+        style="@style/Button"
         android:layout_alignParentBottom="true"
-        android:layout_centerHorizontal="true"
-        style="@style/Button"/>
+        android:layout_alignStart="@+id/mashingTempText" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:text="@string/timer_default"
+        android:id="@+id/timer"
+        android:textSize="100dp"
+        android:layout_centerVertical="true"
+        android:layout_centerHorizontal="true" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceSmall"
+        android:text="@string/before_mashing_5"
+        android:id="@+id/beforeMashing5"
+        android:layout_below="@+id/beforeMashing4"
+        android:layout_alignParentStart="true"
+        android:textColor="@color/imperial_stout" />
 
 </RelativeLayout>
