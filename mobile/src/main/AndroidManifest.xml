@@ -32,6 +32,28 @@
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value="com.jorgeyp.brewtutor.MainActivity" />
         </activity>
+        <activity
+            android:name=".BoilingActivity"
+            android:label="@string/title_activity_boiling"
+            android:parentActivityName=".MashingActivity" >
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.jorgeyp.brewtutor.MashingActivity" />
+        </activity>
+        <activity
+            android:name=".FermentationActivity"
+            android:label="@string/title_activity_fermentation"
+            android:parentActivityName=".BoilingActivity" >
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.jorgeyp.brewtutor.BoilingActivity" />
+        </activity>
+
+        <service
+            android:name=".Receiver"
+            android:enabled="true"
+            android:exported="true" >
+        </service>
     </application>
 
 </manifest>

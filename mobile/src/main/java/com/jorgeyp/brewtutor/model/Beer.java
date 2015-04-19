@@ -28,13 +28,14 @@ public class Beer implements Serializable{
     private Ingredient[] extras;
     // For the fermentation
     private int fermentationTemp;
-    private int conditioningTime;
+    private long fermentationTime;
+    private long conditioningTime;
     private int conditioningTemp;
     private String yeast;
 
     public Beer() {}
 
-    public Beer(int id, String name, int style, String description, int time, float abv, float ibu, float ebc, float mashVol, int mashTime, int mashTemp, Ingredient[] grains, float boilVol, float boilTime, Ingredient[] hops, Ingredient[] extras, int fermentationTemp, int conditioningTime, int conditioningTemp, String yeast) {
+    public Beer(int id, String name, int style, String description, int time, float abv, float ibu, float ebc, float mashVol, int mashTime, int mashTemp, Ingredient[] grains, float boilVol, float boilTime, Ingredient[] hops, Ingredient[] extras, int fermentationTemp, int fermentationTime, int conditioningTime, int conditioningTemp, String yeast) {
         this.id = id;
         this.name = name;
         this.style = style;
@@ -52,6 +53,7 @@ public class Beer implements Serializable{
         this.hops = hops;
         this.extras = extras;
         this.fermentationTemp = fermentationTemp;
+        this.fermentationTime = fermentationTime;
         this.conditioningTime = conditioningTime;
         this.conditioningTemp = conditioningTemp;
         this.yeast = yeast;
@@ -193,11 +195,11 @@ public class Beer implements Serializable{
         this.fermentationTemp = fermentationTemp;
     }
 
-    public int getConditioningTime() {
+    public long getConditioningTime() {
         return conditioningTime;
     }
 
-    public void setConditioningTime(int conditioningTime) {
+    public void setConditioningTime(long conditioningTime) {
         this.conditioningTime = conditioningTime;
     }
 
@@ -241,5 +243,13 @@ public class Beer implements Serializable{
                 ", conditioningTemp=" + conditioningTemp +
                 ", yeast='" + yeast + '\'' +
                 '}';
+    }
+
+    public long getFermentationTime() {
+        return fermentationTime;
+    }
+
+    public void setFermentationTime(long fermentationTime) {
+        this.fermentationTime = fermentationTime;
     }
 }

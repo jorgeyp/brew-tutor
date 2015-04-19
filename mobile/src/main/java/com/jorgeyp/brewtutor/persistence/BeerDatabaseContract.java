@@ -11,6 +11,7 @@ public class BeerDatabaseContract {
     private static final String TEXT_TYPE = " TEXT";
     private static final String INT_TYPE = " INTEGER";
     private static final String FLOAT_TYPE = " FLOAT";
+    private static final String LONG_TYPE = " LONG";
     private static final String COMMA_SEP = ",";
 
     public static final String SQL_CREATE_ENTRIES =
@@ -26,7 +27,11 @@ public class BeerDatabaseContract {
                     BeerEntry.COLUMN_NAME_EBC + FLOAT_TYPE + COMMA_SEP +
                     BeerEntry.COLUMN_NAME_MASH_VOL + FLOAT_TYPE + COMMA_SEP +
                     BeerEntry.COLUMN_NAME_MASH_TIME + INT_TYPE + COMMA_SEP +
-                    BeerEntry.COLUMN_NAME_MASH_TEMP + INT_TYPE +
+                    BeerEntry.COLUMN_NAME_MASH_TEMP + INT_TYPE + COMMA_SEP +
+                    BeerEntry.COLUMN_NAME_BOIL_VOL + INT_TYPE + COMMA_SEP +
+                    BeerEntry.COLUMN_NAME_BOIL_TIME + INT_TYPE + COMMA_SEP +
+                    BeerEntry.COLUMN_NAME_FERMENTATION_TIME + LONG_TYPE + COMMA_SEP +
+                    BeerEntry.COLUMN_NAME_CONDITIONING_TIME + LONG_TYPE +
             " )";
 
     public static final String SQL_DELETE_ENTRIES =
@@ -52,6 +57,13 @@ public class BeerDatabaseContract {
         public static final String COLUMN_NAME_MASH_TIME = "mashtime";
         public static final String COLUMN_NAME_MASH_TEMP = "mashtemp";
 //        public static final String COLUMN_NAME_GRAINS = "grains";
+        public static final String COLUMN_NAME_BOIL_VOL = "boilvol";
+        public static final String COLUMN_NAME_BOIL_TIME = "boiltime";
+
+//        public static final String COLUMN_NAME_FERMENTATION_TEMP = "";
+        public static final String COLUMN_NAME_FERMENTATION_TIME = "fermentationtime";
+
+        public static final String COLUMN_NAME_CONDITIONING_TIME = "conditioningtime";
     }
 }
 

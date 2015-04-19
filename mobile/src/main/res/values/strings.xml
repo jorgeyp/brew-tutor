@@ -46,7 +46,14 @@
     <string name="next_step">Next step</string>
     <string name="before_mashing_3">3. Add the grain slowly</string>
     <string name="before_mashing_4">4. Dissolve any lumps, cover the pot and start the timer</string>
-    <string name="before_mashing_5">5. Monitor the temperature while it's mashing</string>
+    <string name="before_mashing_5">5. Monitor the temperature while it\'s mashing</string>
     <string name="temp_units">ºC</string>
     <string name="timer_default">00:00</string>
+    <string name="title_activity_boiling">BoilingActivity</string>
+    <string name="step2">Step 2: The boil</string>
+    <string name="start_boiling">Start</string>
+    <string name="title_activity_fermentation">FermentationActivity</string>
+    <string name="step3">Step 3: Fermentation</string>
+    <string name="fermentation_text">Fermentation will last a week, you can set a reminder.</string>
+    <string name="fermentation_reminder_btn">Set a reminder</string>
 </resources>
