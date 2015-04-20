@@ -74,7 +74,7 @@ public class ConditioningActivity extends Activity {
     }
 
     private void setNotification(GregorianCalendar date) {
-        Log.d("Conditioning", "calling reminder service");
+        Log.d("Conditioning", "calling ready");
         AlarmManager alarmManager = (AlarmManager) this.getSystemService(this.ALARM_SERVICE);
         Intent intent = new Intent(this, ReminderService.class);
         intent.putExtra("beer", beer);
