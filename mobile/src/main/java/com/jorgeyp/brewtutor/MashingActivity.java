@@ -106,8 +106,8 @@ public class MashingActivity extends Activity implements View.OnClickListener {
         Notification.Builder mBuilder =
                 new Notification.Builder(this)
                         .setSmallIcon(R.drawable.notification_icon)
-                        .setContentTitle("Mashing done!")
-                        .setContentText("Proceed to boiling.")
+                        .setContentTitle(getString(R.string.mashing_done))
+                        .setContentText(getString(R.string.do_boil))
                         .setPriority(Notification.PRIORITY_MAX)
                         .setSound(sound);
         // Creates an explicit intent for an Activity in your app
@@ -137,5 +137,12 @@ public class MashingActivity extends Activity implements View.OnClickListener {
         // mId allows you to update the notification later on.
         int mId = 0;
         mNotificationManager.notify(mId, mBuilder.build());
+    }
+
+    public void nextStep(View view) {
+
+        Intent resultIntent = new Intent(this, BoilingActivity.class);
+        resultIntent.putExtra("beer", beer);
+        startActivity(resultIntent);
     }
 }

@@ -94,7 +94,8 @@
         android:id="@+id/nextStepButton"
         style="@style/Button"
         android:layout_alignParentBottom="true"
-        android:layout_alignStart="@+id/mashingTempText" />
+        android:layout_alignStart="@+id/mashingTempText"
+        android:onClick="nextStep"/>
 
     <TextView
         android:layout_width="wrap_content"

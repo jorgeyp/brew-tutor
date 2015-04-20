@@ -91,8 +91,8 @@ public class BoilingActivity extends Activity implements View.OnClickListener {
         Notification.Builder mBuilder =
                 new Notification.Builder(this)
                         .setSmallIcon(R.drawable.notification_icon)
-                        .setContentTitle("Boiling done!")
-                        .setContentText("Proceed to fermentation.")
+                        .setContentTitle(getString(R.string.boil_done))
+                        .setContentText(getString(R.string.do_fermentation))
                         .setPriority(Notification.PRIORITY_MAX)
                         .setSound(sound);
         // Creates an explicit intent for an Activity in your app
@@ -120,5 +120,12 @@ public class BoilingActivity extends Activity implements View.OnClickListener {
         // mId allows you to update the notification later on.
         int mId = 1;
         mNotificationManager.notify(mId, mBuilder.build());
+    }
+
+    public void nextStep(View view) {
+
+        Intent resultIntent = new Intent(this, FermentationActivity.class);
+        resultIntent.putExtra("beer", beer);
+        startActivity(resultIntent);
     }
 }

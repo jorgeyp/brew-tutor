@@ -56,4 +56,16 @@
     <string name="step3">Step 3: Fermentation</string>
     <string name="fermentation_text">Fermentation will last a week, you can set a reminder.</string>
     <string name="fermentation_reminder_btn">Set a reminder</string>
+    <string name="title_activity_conditioning">ConditioningActivity</string>
+    <string name="step4">Step 4: Conditioning</string>
+    <string name="conditioning_text">Rack your beer in bottles and wait untill the beer is done.</string>
+    <string name="beer_ready">Your beer is ready!</string>
+    <string name="can_taste">"You can now taste your "</string>
+    <string name="mashing_done">Mashing done!</string>
+    <string name="do_boil">Proceed to boiling.</string>
+    <string name="boil_done">Boiling done!</string>
+    <string name="do_fermentation">Proceed to fermentation.</string>
+    <string name="your">"Your "</string>
+    <string name="ready_to_rack">" is ready to be racked in bottles."</string>
+    <string name="racking_time">Beer racking time!</string>
 </resources>

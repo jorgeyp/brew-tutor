@@ -4,45 +4,35 @@
     android:paddingRight="@dimen/activity_horizontal_margin"
     android:paddingTop="@dimen/activity_vertical_margin"
     android:paddingBottom="@dimen/activity_vertical_margin"
-    tools:context="com.jorgeyp.brewtutor.BoilingActivity">
+    tools:context="com.jorgeyp.brewtutor.ConditioningActivity">
 
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:textAppearance="?android:attr/textAppearanceLarge"
-        android:text="@string/step2"
-        android:id="@+id/step2Text"
+        android:text="@string/step4"
+        android:id="@+id/step4Text"
         android:layout_alignParentTop="true"
+        android:layout_alignParentStart="true" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceMedium"
+        android:text="@string/conditioning_text"
+        android:id="@+id/conditioningText"
+        android:textColor="@color/imperial_stout"
+        android:layout_below="@+id/step4Text"
         android:layout_alignParentStart="true" />
 
     <Button
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="@string/start_boiling"
-        android:id="@+id/startBoiling"
+        android:text="@string/fermentation_reminder_btn"
+        android:id="@+id/fermentationReminderBtn"
         style="@style/Button"
-        android:layout_below="@+id/timer"
-        android:layout_centerHorizontal="true" />
-
-    <Button
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="@string/next_step"
-        android:id="@+id/nextStepButton"
-        style="@style/Button"
-        android:layout_alignParentBottom="true"
-        android:layout_alignStart="@+id/startBoiling"
-        android:layout_alignEnd="@+id/startBoiling"
-        android:onClick="nextStep"/>
-
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:textAppearance="?android:attr/textAppearanceLarge"
-        android:text="@string/timer_default"
-        android:id="@+id/timer"
-        android:textSize="100dp"
         android:layout_centerVertical="true"
-        android:layout_centerHorizontal="true" />
+        android:layout_centerHorizontal="true"
+        android:onClick="buttonSetReminderPressed"/>
 
 </RelativeLayout>
